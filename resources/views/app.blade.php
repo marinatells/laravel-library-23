@@ -10,8 +10,9 @@
         @vite('resources/css/index.css')
     </head>
     <body>
-        <div id="app"></div>
-        123
+        <div id="app">
+            Error loading vue scripts
+        </div>
     </body>
     <footer>
         <!-- подключаем файл с vue js -->

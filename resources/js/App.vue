@@ -69,7 +69,7 @@
                 this.books = response.data;
             },
             async addBook() {
-                let response = await axios.post('/api/book/add/', {
+                let response = await axios.post('/api/book/add', {
                     title: this.title,
                     author: this.author
                 });
