@@ -10,4 +10,12 @@ import { createApp } from 'vue';
 import App from './App.vue';
 const app = createApp(App);
 
+// Подключаем JS от бутстрапа
+import 'bootstrap';
+
+// Настройка роутера
+import router from './router.js';
+app.use(router);
+
+// Отрисовка приложения
 app.mount('#app');
