@@ -21,6 +21,7 @@
                         <router-link class="nav-link" aria-current="page" to="/register">Регистрация</router-link>
                     </li>
                 </ul>
+
             </div>
         </div>
     </nav>

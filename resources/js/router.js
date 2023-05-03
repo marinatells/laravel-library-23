@@ -6,10 +6,10 @@ import Login from './pages/Login.vue';
 import Register from './pages/Register.vue';
 
 const routes = [
-  { path: '/login', name: 'login', component: Login },
-  { path: '/register', name: 'register', component: Register },
-  { path: '/user', name: 'user', component: User },
-  { path: '/admin', name: 'admin', component: Admin },
+  { path: '/login', component: Login },
+  { path: '/register', component: Register },
+  { path: '/user', component: User },
+  { path: '/admin', component: Admin },
 ];
 
 const router = createRouter({

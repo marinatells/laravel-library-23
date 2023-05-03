@@ -3,6 +3,10 @@
         <form class="register-form">
             <h2>Регистрация</h2>
             <div class="mb-3">
+                <label for="username" class="form-label">Имя:</label>
+                <input type="text" class="form-control" id="username" aria-describedby="emailHelp" />
+            </div>
+            <div class="mb-3">
                 <label for="email" class="form-label">Почта:</label>
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp" />
             </div>
@@ -11,7 +15,7 @@
                 <input type="password" class="form-control" id="password" />
             </div>
             <button type="submit" class="btn btn-primary">
-                Войти
+                Зарегестрироваться
             </button>
         </form>
     </div>
