@@ -15,11 +15,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\LoginController;
 
-Route::get('/book/all', [BookController::class, 'all']);
+// Книги
 
-Route::get('/book/change_availabilty/{id}', [BookController::class, 'changeAvailabilty']);
+Route::get('/book/all', [BookController::class, 'all'])->middleware(['auth:sanctum', 'ability:user']);
+Route::post('/book/change_availabilty/{id}', [BookController::class, 'changeAvailabilty'])->middleware(['auth:sanctum', 'ability:admin']);
+Route::post('/book/add', [BookController::class, 'add'])->middleware(['auth:sanctum', 'ability:admin']);
+Route::post('/book/delete/{id}', [BookController::class, 'delete'])->middleware(['auth:sanctum', 'ability:admin']);
 
-Route::post('/book/add', [BookController::class, 'add']);
+// Пользователь
+Route::post('/user/register', [LoginController::class, 'createUser']);
+Route::post('/user/login', [LoginController::class, 'createToken']);
+Route::post('/user/logout', [LoginController::class, 'removeToken'])->middleware(['auth:sanctum']);
+Route::get('/user', [LoginController::class, 'getUser'])->middleware(['auth:sanctum']);
 
-Route::get('/book/delete/{id}', [BookController::class, 'delete']);
+

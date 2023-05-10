@@ -75,11 +75,11 @@
                 this.loadBookList();
             },
             async deleteBook(id) {
-                let response = await axios.get('/api/book/delete/' + id);
+                let response = await axios.post('/api/book/delete/' + id);
                 this.loadBookList();
             },
             async changeBookAvailability(id) {
-                let response = await axios.get('/api/book/change_availabilty/' + id);
+                let response = await axios.post('/api/book/change_availabilty/' + id);
                 console.log(response);
                 this.loadBookList();
             }

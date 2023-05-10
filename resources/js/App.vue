@@ -1,6 +1,6 @@
 <template>
-    <navbar></navbar>
-    <router-view />
+    <navbar :user="user"></navbar>
+    <router-view v-if="isLoaded"/>
 </template>
 
 <script>
@@ -8,6 +8,35 @@
     export default {
         components: {
             Navbar
+        },
+        data() {
+            return {
+                user: null,
+                isLoaded: false
+            }
+        },
+        mounted() {
+            let token = localStorage.getItem("token");
+            window.axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+            this.getUser();
+        },
+        methods: {
+            async getUser() {
+                try {
+                    let response = await axios.get('/api/user');
+                    this.user = response.data;
+
+                    if (this.user.isAdmin) {
+                        this.$router.push('/admin');
+                    } else {
+                        this.$router.push('/user');
+                    }
+                } catch (err) {
+                    this.$router.push('/login');
+                }
+
+                this.isLoaded = true;
+            }
         }
     }
 </script>
