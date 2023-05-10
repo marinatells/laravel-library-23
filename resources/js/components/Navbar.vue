@@ -15,6 +15,9 @@
                         <router-link class="nav-link" aria-current="page" to="/register">Регистрация</router-link>
                     </li>
                     <li class="nav-item" v-if="user">
+                        <div class="nav-link">{{ user.name }}</div>
+                    </li>
+                    <li class="nav-item" v-if="user">
                        <button @click="logout" class="nav-link">Выйти</button>
                     </li>
                 </ul>
