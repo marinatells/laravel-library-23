@@ -1,15 +1,19 @@
 
-Создание нового проекта:
+Как настроить проект?
 
-* laravel new vue-project
-* cd vue-project
-* composer require laravel/ui
-* php artisan ui vue
-* npm install
-* npm install vue-router
+* `composer install` - установи пакеты для laravel
+* `npm install` - установи пакеты npm
+* создай файл `.env` :скопируй `.env.example` и настрой в нем подключение к БД
+  * для этого нужно создать пустую БД и ввести правильные логин и пароль к ней
+  * проверь работоспособность подключения командой `php artisan db:show`
+* `php artisan migrate` - проведи миграции для создания таблиц в БД
+* `php artisan db:seed` - наполни таблицы фейковыми данными
+* `php artisan key:generate` - создай ключи приложения (один раз!)
 
 
 Открой 2 терминала и выполни в них команды:
 
-* npm run dev
-* php artisan serve
+* `npm run dev` - команда отслеживает изменения в файлах "клиента" resources
+* `php artisan serve` - команда запускает сервер laravel
+* Переходи по ссылке, тебя ждет работающий сайт библиотеки!
+* Для входа на сайт используй данные пользователей из файла `/database/seeders/DatabaseSeeder.php`
